@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<h2>{{duration}} </h2>
+
+<h3>Topics </h3>
+
+<ul>
+   <li *ngFor="let topic of topics"> {{ topic.toUpperCase() }} </li>
+</ul>
+
+<h3>Add Topic </h3>
+New Topic :<input type="text" #topic>
+<button (click)="addTopic(topic.value)">Add Topic </button>
+<button (click)="deleteTopic(topic.value)">Delete Topic </button>
+
+<p></p>
+<h4>{{message}} </h4>
+
+<span [innerHTML]="title"></span>

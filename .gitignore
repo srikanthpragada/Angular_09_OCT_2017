@@ -2,3 +2,4 @@
 /app/*.js.*
 /assets/*.*
 /environments/*.*
+/**/*.js
