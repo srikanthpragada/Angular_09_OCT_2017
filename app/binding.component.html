@@ -1,0 +1,20 @@
+
+<style>
+ .bright { color :red; font-size:30pt}
+ .bold {font-weight : bold}
+</style>
+
+<div  [class.bold]="bold"  [class.bright]="bright">Simple Text </div>
+
+<div  [ngClass]="myclasses">ngClass Demo</div>
+
+<button (click)="toggleBright()" >Toggle Bright</button>
+
+<p></p>
+
+<input (click)="dummy()" type="checkbox" #details />Details
+
+<p></p>
+
+<div [style.visibility]="details.checked ? 'visible' : 'hidden'">Here are details</div>
+

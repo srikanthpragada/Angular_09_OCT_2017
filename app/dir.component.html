@@ -1,0 +1,25 @@
+
+
+<h1 [style.display]="'none'">This is included but not displayed </h1>
+
+<h1 *ngIf="false">This is not included </h1>
+
+<h1 *ngIf="true">This is included </h1>
+
+<ul>
+    <li *ngFor="let n of names;let i=index;let oddRow=odd; let lastRow=last">
+        <div [style.color]="oddRow ? 'red' : 'black'">
+        {{i}} - {{n}}
+        </div>
+        <hr *ngIf="lastRow"/>
+    </li>
+</ul>            
+
+
+<div *ngIf="condition; then trueBlock; else falseBlock"></div>
+<ng-template #trueBlock>
+      <div>True Block</div>
+</ng-template>
+<ng-template #falseBlock>
+     <div>False Block</div>
+</ng-template>

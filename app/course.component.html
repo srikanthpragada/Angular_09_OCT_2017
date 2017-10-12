@@ -13,6 +13,10 @@ New Topic :<input type="text" #topic>
 <button (click)="deleteTopic(topic.value)">Delete Topic </button>
 
 <p></p>
-<h4>{{message}} </h4>
+<h4 *ngIf="message != ''">{{message}} </h4>
 
-<span [innerHTML]="title"></span>
+<div innerHTML="abc"></div>
+
+<div [innerHTML]="title"></div>
+
+<div [innerHTML]="'Angular 4'"></div>
