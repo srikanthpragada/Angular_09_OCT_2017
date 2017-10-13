@@ -1,19 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { CourseComponent } from './course.component';
-import { BindingComponent } from './binding.component';
-import { DirComponent } from './dir.component';
-import { PipesDemoComponent } from './pipes/pipesdemo.component';
+import { ProductsListComponent } from './icc/products-list.component';
+import { ProductDetailsComponent } from './icc/product-details.component';
 
+import { UseLogComponent } from './services/use-log.component';
+import { LogService } from './services/log.service';
+ 
 @NgModule({
   declarations: [
-    PipesDemoComponent
+     UseLogComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [PipesDemoComponent]
+  providers: [LogService ],
+  bootstrap: [UseLogComponent]
 })
 export class AppModule { }

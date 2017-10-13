@@ -5,6 +5,10 @@ import { BracketsPipe  } from './brackets.pipe';
     selector: 'st-pipes',
     template: `
         <h1>
+           {{ name | brackets }}
+           <p></p>
+           {{ name | brackets : 'u' }}
+           <p></p>
            {{ today  | date : 'longDate'}}
            <p></p>
            {{ today  | date : 'dd-MM-y'}}
@@ -22,6 +26,9 @@ import { BracketsPipe  } from './brackets.pipe';
            {{ name  | slice : -5  | uppercase  }}
            <p></p>
            {{ person | json }}
+           <p></p>
+         
+
          </h1>
     `
 })
