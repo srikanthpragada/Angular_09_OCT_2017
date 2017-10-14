@@ -5,7 +5,8 @@ import { LogService } from './log.service';
     selector: 'st-log',
     template: `
     
-    `
+    `,
+    // providers : [LogService]
 })
 export class UseLogComponent  {
     

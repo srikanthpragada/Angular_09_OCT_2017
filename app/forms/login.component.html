@@ -1,0 +1,32 @@
+
+<style>
+   input.ng-invalid { color :red}
+</style>
+<h1>Login </h1>
+
+<form (ngSubmit)="login()" #loginForm="ngForm"  novalidate>
+    Username <br/>
+    <input type="text" 
+         [(ngModel)]="username" 
+         minlength="4"
+         #uname="ngModel"
+         required
+         name="username"/>
+         <span *ngIf="uname.dirty">
+            <span *ngIf="uname.errors?.required">Username is required</span>
+            <span *ngIf="uname.errors?.minlength">Min. length is 4</span>
+         </span>
+    <p></p>
+    Password <br/>
+    <input type="password" [(ngModel)]="password"
+        #pwd="ngModel"
+        required
+        name="password"/>
+        <span *ngIf="pwd.dirty && pwd.errors?.required">Password is required</span>
+    <p></p>
+    <input type="submit" value="Login" 
+                [disabled]="loginForm.invalid" />
+
+     <p></p>
+    {{ loginForm.valid}}
+</form>    
