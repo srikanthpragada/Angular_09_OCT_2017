@@ -13,8 +13,12 @@
     <p></p>
     Password <br/>
     <input type="password" formControlName="password" />
+     <span *ngIf="loginForm.controls.password.dirty && 
+                     loginForm.controls.password.errors?.mustHaveStar">
+           Pasword must have star
+    </span>
     <p></p>
     <input type="submit" value="Login" (click)="login()"
-           [disabled]="loginForm.invalid"
+          
        />
 </form>    

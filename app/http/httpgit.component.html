@@ -1,0 +1,26 @@
+
+    <h1>Git User Details</h1>
+    Git User Id : <input type="text" #username value="srikanthpragada">
+    <button (click)="getDetails(username.value)">Get Details</button>
+    <button (click)="getRepos(username.value)">Get Repos</button>
+    <img *ngIf="isLoading" src="assets/ajaxicon.gif">
+
+    <div *ngIf="user">
+        <h2>{{user.name }} </h2>
+        <h3>{{user.company }} </h3>
+        <h3>{{user.location }} </h3>
+        <img *ngIf="user.avatar_url" [src]="user.avatar_url">
+    </div>
+
+
+    <div *ngIf="repos">
+        <h2>Repos </h2>
+        <ul>
+            <li *ngFor="let r of repos">
+                <a  target="_blank" [href]="r.html_url">{{r.name}} </a>
+             </li>
+         </ul>
+    </div>
+
+    <h4 *ngIf="message"> {{message}} </h4>
+
