@@ -35,12 +35,6 @@ export class HttpGitComponent {
                        error => this.message = "Sorry! User Not Found!");
     }
 
-    showDetails( value : any) {
-       console.log(value);
-       this.user = <GitUser> value; 
-       console.log(this.user);
-    }
-
     getRepos(username: string): void {
         this.http.get(this.url + username + "/repos")
             .map( resp => resp.json())
