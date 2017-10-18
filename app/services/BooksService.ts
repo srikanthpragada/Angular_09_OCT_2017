@@ -1,39 +1,27 @@
 import { Injectable } from "@angular/core";
 import { WebBook } from 'app/http/Webbook';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import {Observable} from 'rxjs';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/finally';
 
 @Injectable()
 export class BooksService {
-    books : WebBook[];
     URL : string = "http://test.srikanthpragada.com/api/books";
     constructor(private http: Http) {
     }
 
-    getBooks() : WebBook[]
+    getBooks() : Observable<WebBook[]>
     {
-        console.log("getBooks()");
-        // var books :  WebBook[];
-        this.http.get(this.URL)
-                  .map(resp => resp.json()) // convert to JSON
-                  .subscribe( resp => this.books = <WebBook[]> resp ,
-                              error => this.books = null
-                  );
-        console.log(this.books);
-        return  this.books; 
+        return this.http.get(this.URL)
+                  .map(resp => <WebBook[]> resp.json());
     }
 
-    getBook(id : number) : WebBook
+    getBook(id : number) : Observable<WebBook>
     {
-        var book :  WebBook;
-        this.http.get(this.URL + "/" + id)
-                  .map(resp => resp.json()) // convert to JSON
-                  .subscribe( resp => book = <WebBook> resp,
-                              error => book = null
-                  );
-                  
-        return  book; 
+        return this.http.get(this.URL + "/" + id)
+                  .map(resp => <WebBook> resp.json()) // convert to JSON
     }
     
 }

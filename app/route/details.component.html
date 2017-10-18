@@ -1,1 +1,7 @@
-<h1>Details Of Country </h1>
+
+<div *ngIf="country">
+  <h1>{{country.Name}} </h1>
+  <h2>{{country.Capital}} </h2>
+</div>
+
+<h4 *ngIf="!country">Country is not found!</h4>

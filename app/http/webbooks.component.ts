@@ -12,7 +12,7 @@ export class WebBooksComponent implements OnInit {
     }
 
     ngOnInit() {
-       this.books = this.booksService.getBooks();
-       console.log(this.books)
+       this.booksService.getBooks()
+          .subscribe( result => this.books = result);
     }
 }
